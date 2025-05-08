@@ -1,54 +1,74 @@
 'use client';
 
-import Navbar from "../components/Navbar/Navbar";
+import { motion } from 'framer-motion';
+import Particles from "../components/Particles/Particles";
 
 const projects = [
   {
     title: "Website Portofolio",
     desc: "Situs pribadi dibangun dengan Next.js, Tailwind, dan Typescript.",
-    link: "#"
+    link: "#",
+    tags: ["Next.js", "Tailwind", "TypeScript"]
   },
   {
     title: "Landing Page Produk",
     desc: "Halaman promosi responsive untuk startup teknologi.",
-    link: "#"
+    link: "#",
+    tags: ["HTML", "Tailwind", "Marketing"]
   },
   {
     title: "Dashboard Admin",
     desc: "Antarmuka admin dengan chart, table, dan autentikasi.",
-    link: "#"
+    link: "#",
+    tags: ["React", "Chart.js", "Firebase"]
   }
 ];
 
 export default function Portofolio() {
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
-      {/* Aurora Background */}
-      <div className="absolute top-0 left-0 w-full h-full -z-10">
-        <div className="absolute top-0 left-1/2 w-[800px] h-[800px] bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full blur-3xl opacity-30 animate-pulse -translate-x-1/2 -translate-y-1/2" />
+
+      {/* Particles Background */}
+      <div className="absolute inset-0 -z-10">
+        <Particles />
       </div>
 
-      <Navbar />
+      {/* Content */}
       <div className="pt-32 px-6 sm:px-16">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-teal-400 text-transparent bg-clip-text">
           Beberapa Proyek Keren Saya
         </h1>
-        <div className="grid md:grid-cols-3 gap-6">
+
+        <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <a
+            <motion.a
               key={index}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-gray-900 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-xl transition duration-300 ease-in-out"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="group bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-cyan-500/20 hover:shadow-xl transition duration-300 ease-in-out"
             >
-              <h2 className="text-xl font-semibold group-hover:text-white text-gray-200 mb-2">
+              <h2 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition">
                 {project.title}
               </h2>
-              <p className="text-gray-400 group-hover:text-gray-200 transition">
+              <p className="text-gray-300 mb-4 group-hover:text-gray-100 transition">
                 {project.desc}
               </p>
-            </a>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="text-xs bg-cyan-600/20 text-cyan-300 px-2 py-0.5 rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.a>
           ))}
         </div>
       </div>

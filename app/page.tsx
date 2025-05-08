@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import TiltedCard from "./components/TiltedCard/TiltedCard";
-import Navbar from "./components/Navbar/Navbar";
+import TiltedCard from './components/TiltedCard/TiltedCard';
+import Navbar from './components/Navbar/Navbar';
 import Link from "next/link";
-import Portofolio from "./portofolio/portofolio";
-import { motion } from "framer-motion"; // Tambahkan framer-motion untuk animasi
-import Aurora from './components/Aurora/Aurora';
+import Portofolio from './portofolio/portofolio';
+import { motion } from "framer-motion";
 import Kontak from './Contact/Contact';
+import Particles from './components/Particles/Particles';
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -18,10 +18,27 @@ export default function Home() {
 
   return (
     <div className="min-h-screen overflow-x-hidden relative bg-gradient-to-b from-black to-gray-900 text-white">
-      <Navbar />
-      <Aurora />
-      {/* Hero Section */}
-      <div className="container mx-auto pt-32 min-h-screen flex items-center justify-center px-4 sm:px-16 py-8">
+      <Navbar 
+        links={[
+          { href: "#home", text: "Beranda" },
+          { href: "#portofolio", text: "Portofolio" },
+          { href: "#kontak", text: "Kontak" }
+        ]}
+      />
+      <div className='absolute top-0 right-0 left-0 bottom-0 w-full h-full'>
+        <Particles
+          particleColors={['#ffffff', '#ffffff']}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
+      {/* Hero Section - Reduced padding from pt-32 to pt-16 */}
+      <div id="home" className="container mx-auto pt-16 min-h-screen flex items-center justify-center px-4 sm:px-16 py-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
           {/* KIRI - Foto Profil */}
           <motion.div 
@@ -71,7 +88,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link href="/portofolio">
+              <Link href="#portofolio">
                 <button className="mt-6 bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-6 py-3 rounded-xl shadow hover:from-cyan-600 hover:to-teal-600 transition duration-300 transform">
                   Lihat Karya Saya
                 </button>
@@ -82,10 +99,14 @@ export default function Home() {
       </div>
 
       {/* Portofolio Section */}
-      <Portofolio />
+      <div id="portofolio">
+        <Portofolio />
+      </div>
 
       {/* Kontak Section */}
-      <Kontak />
+      <div id="kontak">
+        <Kontak />
+      </div>
 
       {/* Footer */}
       <footer className="bg-gray-900 py-6 mt-16 border-t border-gray-800">
