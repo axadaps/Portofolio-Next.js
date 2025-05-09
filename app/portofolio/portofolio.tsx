@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Particles from "../components/Particles/Particles";
 
 const projects = [
   {
@@ -27,12 +26,6 @@ const projects = [
 export default function Portofolio() {
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
-
-      {/* Particles Background */}
-      <div className="absolute inset-0 -z-10">
-        <Particles />
-      </div>
-
       {/* Content */}
       <div className="pt-32 px-6 sm:px-16">
         <h1 className="text-4xl sm:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-teal-400 text-transparent bg-clip-text">
