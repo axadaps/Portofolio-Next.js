@@ -20,9 +20,9 @@ const projects = [
   },
   {
     title: "Dashboard Admin",
-    desc: "Antarmuka admin dengan chart, table, dan autentikasi.",
+    desc: "Antarmuka admin dimana admin dapat mengelola data siswa dari sistem absensi",
     link: "#",
-    image: "/images/dashboard.jpg",
+    image: "/images/dashboard.png",
     tags: ["React", "Chart.js", "Firebase"]
   }
 ];
