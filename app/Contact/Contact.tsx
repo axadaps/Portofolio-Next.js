@@ -34,7 +34,7 @@ export default function Kontak() {
           <FaGithub size={32} />
         </motion.a>
         <motion.a
-          href="https://wa.me/082231909498" 
+          href="https://wa.me/6282231909498" 
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-green-500 transition-colors duration-300"

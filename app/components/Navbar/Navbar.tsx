@@ -3,6 +3,7 @@
 import React, { useState, useEffect, MouseEvent } from 'react';
 import Link from 'next/link';
 import Aurora from '../Aurora/Aurora';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface NavLink {
   href: string;
@@ -81,37 +82,57 @@ export default function Navbar({ links }: NavbarProps) {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-md text-gray-300 hover:text-white focus:outline-none"
+              className="p-2 rounded-md text-gray-300 hover:text-white transition-transform duration-300 focus:outline-none"
             >
-              {mobileMenuOpen ? (
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
+              <motion.div
+                initial={false}
+                animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {mobileMenuOpen ? (
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </motion.div>
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden px-4 py-3 space-y-2 bg-gray-900/90 backdrop-blur-lg border-t border-white/10">
-          {links.map((link, i) => (
-            <Link
-              key={i}
-              href={link.href}
-              onClick={(e) => scrollToSection(e, link.href)}
-              className="block text-gray-300 hover:text-white text-base font-medium transition-all duration-300"
-            >
-              {link.text}
-            </Link>
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden px-4 py-4 space-y-3 bg-gray-900/80 backdrop-blur-lg border-t border-white/10 rounded-b-xl shadow-lg"
+          >
+            {links.map((link, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.05 }}
+              >
+                <Link
+                  href={link.href}
+                  onClick={(e) => scrollToSection(e, link.href)}
+                  className="block text-gray-300 hover:text-cyan-400 text-base font-semibold transition-all duration-300"
+                >
+                  {link.text}
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
