@@ -23,7 +23,7 @@ const projects = [
     desc: "Antarmuka admin dimana admin dapat mengelola data siswa dari sistem absensi",
     link: "#",
     image: "/images/dashboard.png",
-    tags: ["React", "Chart.js", "Firebase"]
+    tags: ["CodeIgniter", "CSS", "PHP"]
   }
 ];
 
