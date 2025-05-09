@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden relative bg-gradient-to-b from-black to-gray-900 text-white">
+    <div className="min-h-screen overflow-x-hidden overflow-y-auto relative bg-gradient-to-b from-black to-gray-900 text-white scrollbar-hide">
       <Navbar 
         links={[
           { href: "#home", text: "Beranda" },

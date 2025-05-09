@@ -20,6 +20,14 @@ body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
