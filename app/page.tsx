@@ -8,6 +8,7 @@ import Portofolio from './portofolio/portofolio';
 import { motion } from "framer-motion";
 import Kontak from './Contact/Contact';
 import Footer from './footer/footer';
+import About from './About/About';
 import Particles from './components/Particles/Particles';
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <Navbar 
         links={[
           { href: "#home", text: "Beranda" },
+          { href: "#about", text: "Tentang Saya" },
           { href: "#portofolio", text: "Portofolio" },
           { href: "#kontak", text: "Kontak" }
         ]}
@@ -38,7 +40,7 @@ export default function Home() {
           disableRotation={false}
         />
       </div>
-      {/* Hero Section - Reduced padding from pt-32 to pt-16 */}
+
       <div id="home" className="container mx-auto pt-16 min-h-screen flex items-center justify-center px-4 sm:px-16 py-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
           {/* KIRI - Foto Profil */}
@@ -80,10 +82,10 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <h1 className="text-2xl sm:text-4xl font-bold leading-tight bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">
-              Hai, saya Dimas Adhyaksa Pratama
+              Hy There, I'm Dimas Adhyaksa Pratama
             </h1>
-            <p className="mt-4 text-sm sm:text-base text-gray-300">
-              Seorang Web Developer yang siap membangun website impian Anda dengan Next.js, Tailwind, dan Typescript.
+            <p className="mt-4 text-base sm:text-lg text-cyan-300 font-medium tracking-wide text-shadow bg-black bg-opacity-10 rounded-md px-2 py-1">
+              Teknologi Terpadu | Kepemimpinan Efektif | Dampak Berarti
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -97,6 +99,11 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </div>
+      </div>
+
+      {/* About Section */}
+      <div id="about">
+        <About />
       </div>
 
       {/* Portofolio Section */}

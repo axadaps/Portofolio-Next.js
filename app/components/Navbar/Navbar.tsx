@@ -58,7 +58,7 @@ export default function Navbar({ links }: NavbarProps) {
               onClick={(e) => scrollToSection(e, '#home')}
               className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
             >
-              Dimas AP
+              MyPortofolio
             </Link>
           </div>
 

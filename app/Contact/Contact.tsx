@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaWhatsapp, FaLinkedin } from 'react-icons/fa';
+import { FaWhatsapp, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
 export default function Kontak() {
@@ -23,7 +23,18 @@ export default function Kontak() {
       <div className="relative z-10 bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-800 flex justify-center space-x-8">
         {/* Opsi Kontak Langsung */}
         <motion.a
-          href="https://wa.me/082231909498" // JANGAN LUPA GANTI DENGAN NOMOR WHATSAPP ANDA
+          href="https://github.com/axadaps" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-gray-500 transition-colors duration-300"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          aria-label="GitHub"
+        >
+          <FaGithub size={32} />
+        </motion.a>
+        <motion.a
+          href="https://wa.me/082231909498" 
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-green-500 transition-colors duration-300"
@@ -34,7 +45,7 @@ export default function Kontak() {
           <FaWhatsapp size={32} />
         </motion.a>
         <motion.a
-          href="https://www.linkedin.com/in/dimas-adhyaksa-pratama-a3132a218/" // JANGAN LUPA GANTI DENGAN URL PROFIL LINKEDIN ANDA
+          href="https://www.linkedin.com/in/dimas-adhyaksa-pratama-a3132a218/" 
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-blue-500 transition-colors duration-300"
@@ -45,7 +56,18 @@ export default function Kontak() {
           <FaLinkedin size={32} />
         </motion.a>
         <motion.a
-          href="mailto:dimasadhyaksapratama@gmail.com" // JANGAN LUPA GANTI DENGAN ALAMAT EMAIL ANDA
+          href="https://instagram.com/axadap_" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-purple-500 transition-colors duration-300"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Instagram"
+        >
+          <FaInstagram size={32} />
+        </motion.a>
+        <motion.a
+          href="mailto:dimasadhyaksapratama@gmail.com" 
           className="text-white hover:text-yellow-500 transition-colors duration-300"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
