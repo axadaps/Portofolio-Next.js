@@ -26,7 +26,7 @@ export default function About() {
               Tentang Saya
             </h2>
             <p className="text-base sm:text-lg leading-relaxed text-gray-300 mb-4">
-              Saya <span className="font-semibold text-cyan-400">Dimas Adhyaksa Pratama</span>, fresh graduate <span className="font-semibold text-cyan-400">S1 Informatika</span> dari Universitas X (2021-2025).
+              Saya <span className="font-semibold text-cyan-400">Dimas Adhyaksa Pratama</span>, fresh graduate <span className="font-semibold text-cyan-400">S1 Informatika</span> dari Universitas Muhammadiyah Sidoarjo (2021-2025).
               Memiliki minat mendalam pada <span className="font-semibold text-cyan-400">web development</span>, <span className="font-semibold text-cyan-400">mobile app development</span>, dan <span className="font-semibold text-cyan-400">UI/UX design</span>.
             </p>
             <p className="text-base sm:text-lg leading-relaxed text-gray-300 mb-4">
