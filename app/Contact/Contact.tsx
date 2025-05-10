@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { FaWhatsapp, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
-export default function Kontak() {
+export default function Contact() {
   return (
     <motion.div
-      id="kontak"
+      id="contact"
       className="mt-32 px-6 sm:px-16 pb-16 max-w-3xl mx-auto"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -15,13 +15,13 @@ export default function Kontak() {
       viewport={{ once: true }}
     >
       <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">
-        Hubungi Saya
+        Get in Touch
       </h2>
       <p className="text-gray-300 mb-8 text-center">
-        Tertarik untuk berkolaborasi atau sekadar ingin menyapa? Langsung hubungi saya melalui platform di bawah ini!
+        Interested in collaborating or just want to say hello? Feel free to reach out to me through any of the platforms below!
       </p>
       <div className="relative z-10 bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-800 flex justify-center space-x-8">
-        {/* Opsi Kontak Langsung */}
+        {/* Contact Options */}
         <motion.a
           href="https://github.com/axadaps" 
           target="_blank"

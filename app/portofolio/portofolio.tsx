@@ -5,35 +5,35 @@ import Image from 'next/image';
 
 const projects = [
   {
-    title: "Website Portofolio",
-    desc: "Situs pribadi dibangun dengan Next.js, Tailwind, dan Typescript.",
+    title: "Portfolio Website",
+    desc: "A personal site built with Next.js, Tailwind, and TypeScript.",
     link: "https://porto-aksa.vercel.app/",
     image: "/images/portofolio.png",
     tags: ["Next.js", "Tailwind", "TypeScript"]
   },
   {
-    title: "Sistem Absensi Terintegrasi",
-    desc: "Merupakan Website Absensi Terintegrasi dengan WhatsApp Api untuk notifikasi absensi secara realtime",
+    title: "Integrated Attendance System",
+    desc: "A web-based attendance system integrated with WhatsApp API for real-time notifications.",
     link: "#",
     image: "/images/WhatsApp.png",
     tags: ["CodeIgniter", "CSS", "PHP"]
   },
   {
-    title: "Dashboard Admin",
-    desc: "Antarmuka admin dimana admin dapat mengelola data siswa dari sistem absensi",
+    title: "Admin Dashboard",
+    desc: "An admin interface to manage student data within the attendance system.",
     link: "#",
     image: "/images/dashboard.png",
     tags: ["CodeIgniter", "CSS", "PHP"]
   }
 ];
 
-export default function Portofolio() {
+export default function Portfolio() {
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
       {/* Content */}
       <div className="pt-32 px-6 sm:px-16">
         <h1 className="text-4xl sm:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-teal-400 text-transparent bg-clip-text">
-          Beberapa Proyek Keren Saya
+          Some of My Awesome Projects
         </h1>
 
         <div className="grid md:grid-cols-3 gap-8">

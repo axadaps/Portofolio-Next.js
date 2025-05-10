@@ -1,63 +1,81 @@
-'use client'
+'use client';
 
 import { motion } from 'framer-motion';
 import CircularText from '../components/CircularText/CircularText';
-import Link from 'next/link';
+import Image from 'next/image';
 
 export default function About() {
-    return (
-        <div id="about" className="relative min-h-screen flex items-center justify-center px-4 sm:px-16 py-16 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+  return (
+    <section
+      id="about"
+      className="relative min-h-screen flex items-center justify-center px-6 sm:px-20 py-32 bg-gradient-to-b from-gray-900 via-black to-gray-950 overflow-hidden"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto z-10"
+      >
+        {/* LEFT - DESCRIPTION */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto"
+          className="text-center md:text-left"
         >
-          {/* LEFT - ILLUSTRATION */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="text-center md:text-left"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">
-              Tentang Saya
-            </h2>
-            <p className="text-base sm:text-lg leading-relaxed text-gray-300 mb-4">
-              Saya <span className="font-semibold text-cyan-400">Dimas Adhyaksa Pratama</span>, fresh graduate <span className="font-semibold text-cyan-400">S1 Informatika</span> dari Universitas Muhammadiyah Sidoarjo (2021-2025).
-              Memiliki minat mendalam pada <span className="font-semibold text-cyan-400">web development</span>, <span className="font-semibold text-cyan-400">mobile app development</span>, dan <span className="font-semibold text-cyan-400">UI/UX design</span>.
-            </p>
-            <p className="text-base sm:text-lg leading-relaxed text-gray-300 mb-4">
-              Selama kuliah, saya aktif di proyek freelance & organisasi kampus yang memperkuat soft skill leadership dan teamwork. Saya percaya bahwa teknologi mampu menjadi solusi inovatif untuk tantangan zaman.
-            </p>
-            <p className="text-base sm:text-lg leading-relaxed text-gray-300">
-              Saya siap berkontribusi di dunia profesional dengan semangat belajar dan terus berkembang.
-            </p>
-            <div className="mt-6">
-              <Link href="#kontak">
-                <button className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-6 py-3 rounded-xl shadow hover:from-cyan-600 hover:to-teal-600 transition duration-300 transform hover:scale-105">
-                  Hubungi Saya
-                </button>
-              </Link>
-            </div>
-          </motion.div>
-          
-          {/* RIGHT - TEXT */}
-          <CircularText
-            text="Tentang Saya * About Me * "
-            onHover="speedUp"
-            spinDuration={20}
-            className="custom-class"
-            />
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
+            About Me
+          </h2>
+
+          <p className="text-lg sm:text-xl leading-relaxed text-gray-300 text-opacity-90 mb-4">
+            I'm <span className="text-cyan-400 font-semibold">Dimas Adhyaksa Pratama</span>, a graduate in <span className="text-cyan-400 font-semibold">Informatics Engineering</span> from UMSIDA (2021–2025).
+          </p>
+
+          <p className="text-lg sm:text-xl leading-relaxed text-gray-300 text-opacity-90 mb-4">
+            I specialize in <span className="text-cyan-400 font-semibold">web development</span>, <span className="text-cyan-400 font-semibold">mobile apps</span>, and <span className="text-cyan-400 font-semibold">UI/UX design</span>, building impactful solutions through technology.
+          </p>
+
+          <p className="text-lg sm:text-xl leading-relaxed text-gray-300 text-opacity-90">
+            With a passion for collaboration and learning, I aim to craft meaningful digital experiences.
+          </p>
         </motion.div>
 
-        {/* BACKGROUND DECORATION */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 w-40 h-40 bg-cyan-500 opacity-20 rounded-full filter blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-60 h-60 bg-teal-500 opacity-20 rounded-full filter blur-2xl animate-pulse"></div>
-        </div>
+        {/* RIGHT - PROFILE IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+          viewport={{ once: true }}
+          className="flex justify-center"
+        >
+          <div className="relative w-64 h-64 rounded-xl overflow-hidden shadow-xl border border-gray-700">
+            <Image
+              src="/assets/photo/img2.jpg"
+              alt="Graduation Photo"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* CIRCULAR TEXT DECORATION */}
+      <div className="absolute hidden md:block bottom-12 left-12 z-0 opacity-30">
+        <CircularText
+          text="About Me • Let's Collaborate • "
+          onHover="speedUp"
+          spinDuration={30}
+          className="w-[220px] h-[220px]"
+        />
       </div>
-    );
+
+      {/* BACKGROUND PULSE EFFECT */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute top-10 left-10 w-40 h-40 bg-cyan-400 opacity-10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-60 h-60 bg-teal-400 opacity-10 rounded-full filter blur-2xl animate-pulse"></div>
+      </div>
+    </section>
+  );
 }
