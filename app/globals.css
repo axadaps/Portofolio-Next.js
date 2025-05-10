@@ -2,16 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================
+   Root Variables (optional)
+   ========================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================
+   Base styles
+   ========================= */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,14 +23,20 @@ body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
+/* =========================
+   Hide Scrollbar (for WebKit + Firefox)
+   ========================= */
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
 .scrollbar-hidden {
-  -ms-overflow-style: none;  
-  scrollbar-width: none;     
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }
 
+/* =========================
+   Custom Utilities Layer
+   ========================= */
 @layer utilities {
   .text-balance {
     text-wrap: balance;

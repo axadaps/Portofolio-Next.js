@@ -55,6 +55,7 @@ export default function About() {
               src="/assets/photo/img2.jpg"
               alt="Graduation Photo"
               fill
+              sizes="256px"
               className="object-cover"
             />
           </div>

@@ -8,7 +8,6 @@ export default function Experience() {
     <div
       id="experience"
       className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-16 py-16 bg-cover bg-center"
-      style={{ backgroundImage: 'url("/background-home.jpg")' }}
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -106,6 +105,24 @@ export default function Experience() {
               </h3>
               <p className="text-sm mb-2">
                 Coordinated over 50 members, led music events and workshops, and built an internal documentation system that improved workflow by 30%.
+              </p>
+            </div>
+          </div>
+
+          {/* I'Konfest */}
+          <div className="relative">
+            <div className="absolute -left-5 top-0">
+              <div className="w-10 h-10 bg-teal-500 text-white rounded-full flex items-center justify-center shadow-lg">
+                <FaRocket />
+              </div>
+            </div>
+            <p className="text-sm text-gray-300 mb-2 ml-10">2022</p>
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 shadow-lg text-gray-200">
+              <h3 className="font-semibold text-lg mb-1">
+                Sponsorship Division – Ikabama Concert and Festival
+              </h3>
+              <p className="text-sm mb-2">
+                Responsible for securing sponsorships by drafting proposals, establishing partnerships with external organizations, and maintaining professional communication to support the event's financial and logistical needs.
               </p>
             </div>
           </div>
